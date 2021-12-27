@@ -11,6 +11,9 @@ import hls from 'videojs-contrib-hls'
 //  const hls = require('videojs-contrib-hls')
 Vue.use(hls)
 
+import toastReg from './components/toast/toast'
+Vue.use(toastReg)
+
 Vue.config.productionTip = false
 
 new Vue({

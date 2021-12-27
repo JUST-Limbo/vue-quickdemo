@@ -3,6 +3,7 @@
 		<div @click="push">
 			push /Params
 		</div>
+    <button @click="$toast">toast</button>
 	</div>
 </template>
 
