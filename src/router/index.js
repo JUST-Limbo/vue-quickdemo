@@ -5,6 +5,8 @@ import test from '../views/test.vue'
 import father from '../views/father.vue'
 import player from '../views/player.vue'
 import routerParams from '../views/routerParams.vue'
+import testlazycascader from '../views/testlazycascader.vue'
+
 
 Vue.use(VueRouter)
 
@@ -41,6 +43,11 @@ const routes = [
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+	},
+	{
+		path: '/testlazycascader',
+		name: 'testlazycascader',
+		component: testlazycascader
 	}
 ]
 
