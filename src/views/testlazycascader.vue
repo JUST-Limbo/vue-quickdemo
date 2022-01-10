@@ -48,8 +48,8 @@ export default {
 			props: {
 				lazy: true,
 				lazyLoad(node, resolve) {
-          console.log(node.children, node.children.length)
-					if (node.children.length==0) {
+					console.log(node, node.children, node.children.length, node.loaded)
+					if (node.children.length == 0) {
 						const { level } = node
 						setTimeout(() => {
 							const nodes = Array.from({ length: level + 1 }).map((item) => ({
