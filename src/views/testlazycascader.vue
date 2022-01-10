@@ -12,7 +12,38 @@ export default {
 	data() {
 		return {
 			result: ['1', '2', '3'],
-			options: [
+			options: [],
+			props: {
+				lazy: true,
+        // 初始化会执行一次
+				lazyLoad(node, resolve) {
+          console.log(19)
+          console.log(node)
+          // console.log(node, node.children, node.children.length, node.loaded)
+          if (node.children&&node.children.length == 0) {
+						const { level } = node
+						setTimeout(() => {
+							const nodes = Array.from({ length: level + 1 }).map((item) => ({
+								value: `${(id += 10)}`,
+								label: `选项${id}`,
+								leaf: level >= 2
+							}))
+							// 通过调用resolve将子节点数据返回，通知组件数据加载完成
+							resolve(nodes)
+						}, 1000)
+					} else {
+            console.log(32)
+						resolve([])
+					}
+				}
+			}
+		}
+	},
+	created() {
+    console.log(1)
+		setTimeout(() => {
+      console.log(2)
+			this.options = [
 				{
 					value: '1',
 					label: '江苏省',
@@ -44,28 +75,8 @@ export default {
 						{ value: '10', label: '青岛市' }
 					]
 				}
-			],
-			props: {
-				lazy: true,
-				lazyLoad(node, resolve) {
-					console.log(node, node.children, node.children.length, node.loaded)
-					if (node.children.length == 0) {
-						const { level } = node
-						setTimeout(() => {
-							const nodes = Array.from({ length: level + 1 }).map((item) => ({
-								value: `${(id += 10)}`,
-								label: `选项${id}`,
-								leaf: level >= 2
-							}))
-							// 通过调用resolve将子节点数据返回，通知组件数据加载完成
-							resolve(nodes)
-						}, 1000)
-					} else {
-						resolve([])
-					}
-				}
-			}
-		}
+			]
+		}, 5000)
 	}
 }
 </script>
