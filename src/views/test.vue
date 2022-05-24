@@ -1,5 +1,6 @@
 <template>
   <div>
+    test
     <span v-if="defer(1)">12312</span>
     <span v-if="defer(2)">12312</span>
     <span v-if="defer(3)">12312</span>

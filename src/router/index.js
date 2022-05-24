@@ -6,6 +6,7 @@ import father from '../views/father.vue'
 import player from '../views/player.vue'
 import routerParams from '../views/routerParams.vue'
 import testlazycascader from '../views/testlazycascader.vue'
+import pushsameroute from '../views/pushsameroute.vue'
 
 
 Vue.use(VueRouter)
@@ -48,7 +49,12 @@ const routes = [
 		path: '/testlazycascader',
 		name: 'testlazycascader',
 		component: testlazycascader
-	}
+	},
+  {
+    path:'/pushsameroute/:time?',
+    name:'pushsameroute',
+    component: pushsameroute
+  }
 ]
 
 const router = new VueRouter({

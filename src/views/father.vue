@@ -1,5 +1,6 @@
 <template>
   <div>
+    123123
     <div>fatherObj:{{JSON.stringify(fatherObj)}}</div>
     <son :objFromFather="fatherObj"></son>
   </div>
