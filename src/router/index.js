@@ -1,13 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import test from '../views/test.vue'
-import father from '../views/father.vue'
-import player from '../views/player.vue'
-import routerParams from '../views/routerParams.vue'
-import testlazycascader from '../views/testlazycascader.vue'
-import pushsameroute from '../views/pushsameroute.vue'
-
 
 Vue.use(VueRouter)
 
@@ -15,27 +7,27 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: Home
+    component: () => import('../views/Home.vue')
 	},
 	{
 		path: '/father',
 		name: 'father',
-		component: father
+    component: () => import('../views/father.vue')
 	},
 	{
 		path: '/player',
 		name: 'player',
-		component: player
+		component: () => import('../views/player.vue')
 	},
 	{
 		path: '/test',
 		name: 'test',
-		component: test
+		component: () => import('../views/test.vue')
 	},
 	{
 		path: '/routerParams/:a/:b?/:c',
 		name: 'routerParams',
-		component: routerParams
+		component: () => import('../views/routerParams.vue')
 	},
 	{
 		path: '/about',
@@ -48,12 +40,12 @@ const routes = [
 	{
 		path: '/testlazycascader',
 		name: 'testlazycascader',
-		component: testlazycascader
+		component: () => import('../views/testlazycascader.vue')
 	},
   {
     path:'/pushsameroute/:time?',
     name:'pushsameroute',
-    component: pushsameroute
+    component: () => import('../views/pushsameroute.vue')
   },
   {
     path:'/dialog',
