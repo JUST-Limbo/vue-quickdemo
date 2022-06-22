@@ -48,9 +48,9 @@ const routes = [
     component: () => import('../views/pushsameroute.vue')
   },
   {
-    path:'/dialog',
-    name:'dialog',
-    component:()=>import('../views/dialog.vue')
+    path:'/dialogtest',
+    name:'dialogtest',
+    component: () => import('../views/dialogtest/dialogtest.vue')
   }
 ]
 

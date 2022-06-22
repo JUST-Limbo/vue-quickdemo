@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Toast from './toast.vue'
 
-console.log(Toast)
 const ToastConstructor = Vue.extend(Toast)
-console.log(ToastConstructor)
 
 function showToast(text, dur=2000) {
 	const toastDom = new ToastConstructor({
