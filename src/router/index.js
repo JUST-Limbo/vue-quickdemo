@@ -54,6 +54,11 @@ const routes = [
     path:'/pushsameroute/:time?',
     name:'pushsameroute',
     component: pushsameroute
+  },
+  {
+    path:'/dialog',
+    name:'dialog',
+    component:()=>import('../views/dialog.vue')
   }
 ]
 
