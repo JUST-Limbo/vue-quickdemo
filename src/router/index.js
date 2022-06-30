@@ -46,12 +46,17 @@ const routes = [
     path:'/pushsameroute/:time?',
     name:'pushsameroute',
     component: () => import('../views/pushsameroute.vue')
-  },
-  {
-    path:'/dialogtest',
-    name:'dialogtest',
-    component: () => import('../views/dialogtest/dialogtest.vue')
-  }
+    },
+    {
+        path: '/dialogtest',
+        name: 'dialogtest',
+        component: () => import('../views/dialogtest/dialogtest.vue')
+    },
+    {
+        path: '/clearspace',
+        name: 'clearspace',
+        component: () => import('../views/clearspace.vue')
+    }
 ]
 
 const router = new VueRouter({
